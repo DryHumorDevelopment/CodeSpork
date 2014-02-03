@@ -1,10 +1,28 @@
 CodeSpork::Application.routes.draw do
+  get "page/about"
+  get "page/tips"
+  get "page/qa"
+  get "page/faq"
+  get "page/resources"
+  get "page/horror"
+  get "forums/html"
+  get "forums/vb"
+  get "forums/cs"
+  get "forums/asp"
+  get "forums/rb"
+  get "forums/rails"
+  get "forums/php"
+  get "forums/java"
+  get "forums/js"
+  get "forums/jq"
+  get "forums/mobile"
+  get "page/main"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'page#main'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
