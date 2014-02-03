@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+html, body
+{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+body
+{
+    padding: 1%;
+    font-size: 1.5em;
+
+}
+
+/*container formatting*/
+#container
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200%;
+}
+
+/* main tag formatting */
+.headerBar
+{
+    /*border: 2px solid lime;*/
+    background-color: #003366;
+    color: #FFF8DC;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.topNav
+{
+    /*border: 2px solid blue;*/
+    padding: 1%;
+    background-color: #CCCC99;
+}
+
+
+.sideNav
+{
+    /*border: 2px solid yellow;*/
+    font-size: .8em;
+    float: left;
+    width: 15%;
+    background-color: #834C24;
+    height: 70%;
+    padding-left: 1%;
+
+}
+
+
+.mainContent
+{
+    /*border: 2px solid green;*/
+
+    width: 70%;
+    background-color: white;
+    height:70%;
+    overflow: scroll;
+    padding-right: 1%;
+    padding-left: 1%;
+    float: left;
+    /*position: absolute;*/
+
+}
+
+
+.rightAside
+{
+    /*border: 2px solid orange;*/
+    float: right;
+    width: 10%;
+    background-color: #834C24;
+    height: 70%;
+    padding-left: 1%;
+    padding-right: .5%;
+
+}
+
+.btmFooter
+{
+    /*border: 2px solid lime;*/
+    background-color: #003366;
+    color: #FFF8DC;
+    position: relative;
+    margin-top: 0px;
+    clear:both;
+
+    padding-left: 1%;
+    /*background-color: grey;*/
+}
+
+/* additional tag formatting */
+h2{color: #666699;}
+h3{color: #FFF8DC;}
+h4{color: #FFF8DC;}
+
+/* basic link */
+a:link {color: #003333;}
+
+
+a:visited {
+    color: #003333;
+}
+
+/* mouse over link */
+a:hover {
+    color: yellow;
+}
+
+/* visited link */
+a:active {
+    color: red;
+}
+
+
+
+/* Website logo formatting*/
+#spig
+{
+    padding-left: 1%;
+    margin-right: 0;
+}
+#spork
+{
+    padding-left: 0;
+    margin-left: 0;
+}

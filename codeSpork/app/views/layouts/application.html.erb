@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeSpork</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header class="headerBar">
+  <%=image_tag "banner1.png"%>
+</header>
+<nav class="topNav">
+  <%= render 'layouts/topNav' %>
+</nav>
+<nav class="sideNav">
+  <%= render 'layouts/sideNav' %>
+
+</nav>
+<section class="mainContent">
+  <%= yield %>
+</section>
+
+<aside class="rightAside">
+  <h4>Right Side bar content</h4>
+</aside>
+
+<footer class="btmFooter">
+  <h4>Footer</h4>
+  <h5>Insert Company Logo Here:</h5>
+</footer>
+
+
+</body>
+</html>
