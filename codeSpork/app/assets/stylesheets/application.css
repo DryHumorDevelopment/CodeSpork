@@ -38,7 +38,7 @@ body
 .headerBar
 {
     /*border: 2px solid lime;*/
-    background-color: #003366;
+    background:  linear-gradient(to top, #003366, #ffffff);
     color: #FFF8DC;
     padding-left: 1%;
     padding-right: 1%;
@@ -95,27 +95,26 @@ body
 .btmFooter
 {
     /*border: 2px solid lime;*/
-    background-color: #003366;
+    background:  linear-gradient(to bottom, #003366, #ffffff);
     color: #FFF8DC;
     position: relative;
     margin-top: 0px;
     clear:both;
-
     padding-left: 1%;
-    /*background-color: grey;*/
 }
 
 /* additional tag formatting */
 h2{color: #666699;}
 h3{color: #FFF8DC;}
 h4{color: #FFF8DC;}
+h5{color: #000000;}
 
 /* basic link */
-a:link {color: #003333;}
+a:link {color: #00aeae;}
 
 
 a:visited {
-    color: #003333;
+    color: #b05bca;
 }
 
 /* mouse over link */
