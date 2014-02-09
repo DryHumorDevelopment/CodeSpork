@@ -13,7 +13,7 @@
  */
 html, body
 {
-    background-color: black;
+    background-color: #000000;
     height: 100%;
     width: 100%;
 }
@@ -36,9 +36,22 @@ body
 
 /* main tag formatting */
 .headerBar
-{
+{   background-color: #003366;
+    background-image: -webkit-gradient(
+    	linear,
+    	right bottom,
+    	right top,
+    	color-stop(0, #003366),
+    	color-stop(1, #D5D4D4)
+    );
+    background-image: -o-linear-gradient(top, #003366 0%, #D5D4D4 100%);
+    background-image: -moz-linear-gradient(top, #003366 0%, #D5D4D4 100%);
+    background-image: -webkit-linear-gradient(top, #003366 0%, #D5D4D4 100%);
+    background-image: -ms-linear-gradient(top, #003366 0%, #D5D4D4 100%);
+    background-image: linear-gradient(to top, #003366 0%, #D5D4D4 100%);
+
     /*border: 2px solid lime;*/
-    background:  linear-gradient(to top, #003366, #ffffff);
+
     color: #FFF8DC;
     padding-left: 1%;
     padding-right: 1%;
@@ -48,8 +61,9 @@ body
     /*border: 2px solid blue;*/
     padding: 1%;
     background-color: #CCCC99;
-}
+    color:#00aeae;
 
+}
 
 .sideNav
 {
@@ -69,7 +83,7 @@ body
     /*border: 2px solid green;*/
 
     width: 70%;
-    background-color: white;
+    background-color: #ffffff;
     height:70%;
     overflow: scroll;
     padding-right: 1%;
@@ -95,7 +109,19 @@ body
 .btmFooter
 {
     /*border: 2px solid lime;*/
-    background:  linear-gradient(to bottom, #003366, #ffffff);
+   background-color: #003366;
+    background-image: -webkit-gradient(
+    	linear,
+    	right top,
+    	right bottom,
+    	color-stop(0, #003366),
+    	color-stop(1, #D5D4D4)
+    );
+    background-image: -o-linear-gradient(bottom, #003366 0%, #D5D4D4 100%);
+    background-image: -moz-linear-gradient(bottom, #003366 0%, #D5D4D4 100%);
+    background-image: -webkit-linear-gradient(bottom, #003366 0%, #D5D4D4 100%);
+    background-image: -ms-linear-gradient(bottom, #003366 0%, #D5D4D4 100%);
+    background-image: linear-gradient(to bottom, #003366 0%, #D5D4D4 100%);
     color: #FFF8DC;
     position: relative;
     margin-top: 0px;
@@ -104,31 +130,30 @@ body
 }
 
 /* additional tag formatting */
-h2{color: #666699;}
+h2{color: #003366;}
 h3{color: #FFF8DC;}
 h4{color: #FFF8DC;}
 h5{color: #000000;}
 
 /* basic link */
-a:link {color: #00aeae;}
-
-
-a:visited {
-    color: #b05bca;
-}
-
-/* mouse over link */
-a:hover {
-    color: yellow;
-}
+a:link {color: #ffffff;}
 
 /* visited link */
-a:active {
-    color: red;
-}
+a:visited { color: #00aeae; }
 
+/* mouse over link */
+a:hover { color: #ffff00; }
 
+/* active link */
+a:active { color: #ff0000; }
 
+/* top Nav link format  */
+.topNav a:link{color: #003366 }
+.topNav a:visited { color: #00aeae; }
+.topNav a:hover { background-color:#000000; border-radius:10px; padding:10px; color:#ffffff; }
+.topNav a:active { color: #ff0000; }
+
+a {text-decoration: none}
 /* Website logo formatting*/
 #spig
 {

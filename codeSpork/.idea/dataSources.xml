@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails codeSpork: development" uuid="d7f3094f-f580-4a88-baf4-0f70fb758079">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Brandon\Documents\GitHub\codeSpork\codeSpork\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Deserai Adelman\Desktop\AgileProject\codeSpork\codeSpork\db\development.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine40/config/jdbc-drivers/xerial-sqlite-license.txt</url>
