@@ -1,3 +1,29 @@
 // Place all the styles related to the Tips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  td {
+    min-width: 1in;
+  }
+}
+
+figure {
+  float: left;
+}
+article {
+  width: 60%;
+  float: right;
+}
+
+.tipsCode {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.links {
+  text-align: right;
+}

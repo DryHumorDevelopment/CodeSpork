@@ -26,8 +26,8 @@ class TipsController < ApplicationController
   # POST /tips.json
   def create
     @tip = Tip.new(tip_params)
-    @tip.username = current_user
-    @tip.avatar
+    @tip.username = current_user.user_name
+    @tip.avatar = current_user.avatar
 
     respond_to do |format|
       if @tip.save

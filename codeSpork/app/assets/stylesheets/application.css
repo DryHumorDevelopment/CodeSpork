@@ -25,6 +25,10 @@ body
 
 }
 
+.clearfix {
+    clear: both;
+}
+
 /*container formatting*/
 #container
 {
@@ -32,6 +36,12 @@ body
     margin-left: auto;
     margin-right: auto;
     height: 200%;
+}
+
+.innerContainer {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 /* main tag formatting */
@@ -137,6 +147,7 @@ h5{color: #000000;}
 
 /* basic link */
 a:link {color: #ffffff;}
+.mainContent a {color: grey;}
 
 /* visited link */
 a:visited { color: #00aeae; }

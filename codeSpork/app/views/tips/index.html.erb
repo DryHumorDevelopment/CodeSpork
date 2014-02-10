@@ -7,10 +7,10 @@
       <th>Avatar</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Code</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <% if is_admin? %>
+          <th></th>
+          <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -18,18 +18,19 @@
     <% @tips.each do |tip| %>
       <tr>
         <td><%= tip.username %></td>
-        <td><%= tip.avatar %></td>
+        <td><%= image_tag tip.avatar %></td>
         <td><%= tip.title %></td>
-        <td><%= tip.description %></td>
-        <td><%= tip.code %></td>
-        <td><%= link_to 'Show', tip %></td>
-        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= truncate_html(tip.description) %><br/><%= link_to 'Read More', tip %></td>
+        <% if is_admin? %>
+            <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
+            <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if is_admin? %>
 <%= link_to 'New Tip', new_tip_path %>
+<% end %>

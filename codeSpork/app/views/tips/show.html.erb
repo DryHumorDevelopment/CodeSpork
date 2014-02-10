@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
+<div class="innerContainer">
+    <figure>
+      <%= image_tag @tip.avatar %>
+      <figcaption><%= @tip.username %></figcaption>
+    </figure>
 
-<p>
-  <strong>Username:</strong>
-  <%= @tip.username %>
-</p>
+    <article>
+        <p>
+          <strong>Title:</strong>
+          <%= @tip.title %>
+        </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @tip.avatar %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @tip.description.html_safe %>
+        </p>
+    </article>
+    <div class="clearfix"></div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tip.title %>
-</p>
+    <div class="tipsCode">
+      <strong>Code:</strong>
+      <%= @tip.code.html_safe %>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tip.description %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @tip.code %>
-</p>
-
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+    <div class="links">
+        <% if is_admin? %>
+            <%= link_to 'Edit', edit_tip_path(@tip) %> |
+        <% end %>
+        <%= link_to 'Back', tips_path %>
+    </div>
+</div>
