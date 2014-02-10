@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210054854) do
+ActiveRecord::Schema.define(version: 20140210193332) do
 
   create_table "changelogs", force: true do |t|
     t.string   "user"
     t.text     "content"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tips", force: true do |t|
+    t.string   "username"
+    t.string   "avatar"
+    t.string   "title"
+    t.text     "description"
+    t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
