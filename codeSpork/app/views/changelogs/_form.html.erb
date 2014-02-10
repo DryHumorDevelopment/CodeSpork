@@ -1,0 +1,30 @@
+<%= form_for(@changelog) do |f| %>
+  <% if @changelog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@changelog.errors.count, "error") %> prohibited this changelog from being saved:</h2>
+
+      <ul>
+      <% @changelog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if user_signed_in? && current_user.admin %>
+      <div class="field">
+        <%= f.hidden_field :user %>
+      </div>
+      <div class="field">
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :date %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+        <% else %>
+        You do not have permission to view this page!
+  <% end %>
+<% end %>

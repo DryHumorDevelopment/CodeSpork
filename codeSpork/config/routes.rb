@@ -1,4 +1,6 @@
 CodeSpork::Application.routes.draw do
+  resources :changelogs
+
   get "page/about"
   get "page/tips"
   get "page/qa"

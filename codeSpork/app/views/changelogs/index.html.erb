@@ -1,0 +1,32 @@
+<h1>Listing changelogs</h1>
+<% if user_signed_in? && current_user.admin %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Content</th>
+          <th>Date</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @changelogs.each do |changelog| %>
+          <tr>
+            <td><%= changelog.user %></td>
+            <td><%= changelog.content %></td>
+            <td><%= changelog.date %></td>
+            <td><%= link_to 'Show', changelog %></td>
+            <td><%= link_to 'Edit', edit_changelog_path(changelog) %></td>
+            <td><%= link_to 'Destroy', changelog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'New Changelog', new_changelog_path %>
+    <%  else %>
+    You do not have permission to view this page!
+<% end %>
+
