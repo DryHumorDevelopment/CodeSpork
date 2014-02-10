@@ -148,9 +148,9 @@ a:hover { color: #ffff00; }
 a:active { color: #ff0000; }
 
 /* top Nav link format  */
-.topNav a:link{color: #003366 }
+.topNav a:link{color: #003366; border-radius:10px; padding:10px;}
 .topNav a:visited { color: #00aeae; }
-.topNav a:hover { background-color:#000000; border-radius:10px; padding:10px; color:#ffffff; }
+.topNav a:hover { background-color:#000000; color:#ffffff; }
 .topNav a:active { color: #ff0000; }
 
 a {text-decoration: none}
