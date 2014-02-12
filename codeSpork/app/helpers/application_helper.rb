@@ -6,8 +6,4 @@ module ApplicationHelper
       return false
     end
   end
-  def truncate_html(html)
-    text = html.gsub(/\<.+\>/, '')
-    return truncate(text.to_s, :length => 15)
-  end
 end

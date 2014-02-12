@@ -20,7 +20,7 @@
         <td><%= tip.username %></td>
         <td><%= image_tag tip.avatar %></td>
         <td><%= tip.title %></td>
-        <td><%= truncate_html(tip.description) %><br/><%= link_to 'Read More', tip %></td>
+        <td><%= truncate(tip.description, :length => 15) %><br/><%= link_to 'Read More', tip %></td>
         <% if is_admin? %>
             <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
             <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
