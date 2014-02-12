@@ -8,3 +8,19 @@ dt {
       text-decoration: underline;
       font-size: 1.2em;
    }
+
+.mainArticle {
+  border-bottom: 1px dashed midnightblue;
+  text-align: justify;
+  padding: 1%;
+  &:nth-child(even){
+    border-right: 1px dashed midnightblue;
+  }
+  &:nth-child(odd){
+    border-left: 1px dashed midnightblue;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
