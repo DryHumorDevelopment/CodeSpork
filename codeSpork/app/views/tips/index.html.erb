@@ -9,7 +9,6 @@
       <th>Description</th>
       <% if is_admin? %>
           <th></th>
-          <th></th>
       <% end %>
     </tr>
   </thead>
@@ -22,8 +21,7 @@
         <td><%= tip.title %></td>
         <td><%= truncate(tip.description, :length => 15) %><br/><%= link_to 'Read More', tip %></td>
         <% if is_admin? %>
-            <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-            <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_tip_path(tip) %>&nbsp;/&nbsp;<%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
