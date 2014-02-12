@@ -80,8 +80,8 @@ body
     a {
       margin: 0;
       display: inline-block;
-      &:link{color: #003366; padding:10px;}
-      &:visited { color: #00aeae; }
+      color: #003366;
+      padding:10px;
       &:hover { background-color:#000000; color:#ffffff; }
       &:active { color: #ff0000; }
     }
@@ -157,10 +157,8 @@ h5{color: #000000;}
 /* basic link */
 a {
   text-decoration: none;
-  &:link {color: #ffffff;}
-  &:visited { color: #00aeae; }
+  color: #ffffff;
   &:hover { color: #ffff00; }
-  &:active { color: #ff0000; }
 }
 
 @media screen and (max-width: 780px) {
@@ -195,5 +193,11 @@ a {
   .mainContent {
     clear: both;
     width: 98%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  #container {
+    width: 100%;
   }
 }
