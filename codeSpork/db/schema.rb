@@ -22,11 +22,10 @@ ActiveRecord::Schema.define(version: 20140210193332) do
   end
 
   create_table "tips", force: true do |t|
-    t.string   "username"
-    t.string   "avatar"
     t.string   "title"
     t.text     "description"
     t.text     "code"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

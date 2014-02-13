@@ -6,6 +6,7 @@ class TipsController < ApplicationController
   # GET /tips.json
   def index
     @tips = Tip.all
+    @users = User.all
   end
 
   # GET /tips/1
@@ -26,8 +27,7 @@ class TipsController < ApplicationController
   # POST /tips.json
   def create
     @tip = Tip.new(tip_params)
-    @tip.username = current_user.user_name
-    @tip.avatar = current_user.avatar
+    @tip.user_id = current_user.id
 
     respond_to do |format|
       if @tip.save
@@ -74,10 +74,11 @@ class TipsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_tip
       @tip = Tip.find(params[:id])
+      @user = User.find_by_id(@tip.user_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:username, :avatar, :title, :description, :code)
+      params.require(:tip).permit(:title, :description, :code, :user_id)
     end
 end

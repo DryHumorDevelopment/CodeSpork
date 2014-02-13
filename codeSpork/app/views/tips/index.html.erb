@@ -15,9 +15,9 @@
 
   <tbody>
     <% @tips.each do |tip| %>
-      <tr>
-        <td><%= tip.username %></td>
-        <td><%= image_tag tip.avatar %></td>
+      <tr><% user = compare(@users, tip.user_id) %>
+        <td><%= user.user_name %></td>
+        <td><%= image_tag user.avatar %></td>
         <td><%= tip.title %></td>
         <td><%= truncate(tip.description, :length => 15) %><br/><%= link_to 'Read More', tip %></td>
         <% if is_admin? %>
