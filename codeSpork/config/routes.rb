@@ -1,4 +1,20 @@
 CodeSpork::Application.routes.draw do
+  resources :forums do
+    collection do
+      get :htmlcss
+      get :responsive
+      get :vb
+      get :csharp
+      get :asp
+      get :rb
+      get :rails
+      get :php
+      get :js
+      get :jq
+      get :mobile
+    end
+  end
+
   resources :tips
 
   resources :changelogs
@@ -8,17 +24,6 @@ CodeSpork::Application.routes.draw do
   get "page/faq"
   get "page/resources"
   get "page/horror"
-  get "forums/html"
-  get "forums/vb"
-  get "forums/cs"
-  get "forums/asp"
-  get "forums/rb"
-  get "forums/rails"
-  get "forums/php"
-  get "forums/java"
-  get "forums/js"
-  get "forums/jq"
-  get "forums/mobile"
   get "page/main"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

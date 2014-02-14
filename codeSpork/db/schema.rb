@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210193332) do
+ActiveRecord::Schema.define(version: 20140214043020) do
 
   create_table "changelogs", force: true do |t|
     t.string   "user"
     t.text     "content"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forums", force: true do |t|
+    t.string   "title"
+    t.text     "question"
+    t.string   "tags"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

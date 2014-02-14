@@ -1,59 +1,49 @@
 require 'test_helper'
 
 class ForumsControllerTest < ActionController::TestCase
-  test "should get html" do
-    get :html
+  setup do
+    @forum = forums(:one)
+  end
+
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:forums)
+  end
+
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
-  test "should get vb" do
-    get :vb
+  test "should create forum" do
+    assert_difference('Forum.count') do
+      post :create, forum: { question: @forum.question, tags: @forum.tags, title: @forum.title, user_id: @forum.user_id }
+    end
+
+    assert_redirected_to forum_path(assigns(:forum))
+  end
+
+  test "should show forum" do
+    get :show, id: @forum
     assert_response :success
   end
 
-  test "should get cs" do
-    get :cs
+  test "should get edit" do
+    get :edit, id: @forum
     assert_response :success
   end
 
-  test "should get asp" do
-    get :asp
-    assert_response :success
+  test "should update forum" do
+    patch :update, id: @forum, forum: { question: @forum.question, tags: @forum.tags, title: @forum.title, user_id: @forum.user_id }
+    assert_redirected_to forum_path(assigns(:forum))
   end
 
-  test "should get rb" do
-    get :rb
-    assert_response :success
-  end
+  test "should destroy forum" do
+    assert_difference('Forum.count', -1) do
+      delete :destroy, id: @forum
+    end
 
-  test "should get rails" do
-    get :rails
-    assert_response :success
+    assert_redirected_to forums_path
   end
-
-  test "should get php" do
-    get :php
-    assert_response :success
-  end
-
-  test "should get java" do
-    get :java
-    assert_response :success
-  end
-
-  test "should get js" do
-    get :js
-    assert_response :success
-  end
-
-  test "should get jq" do
-    get :jq
-    assert_response :success
-  end
-
-  test "should get mobile" do
-    get :mobile
-    assert_response :success
-  end
-
 end
