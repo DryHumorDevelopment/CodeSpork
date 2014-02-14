@@ -1,5 +1,6 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
+  before_action :set_users
   before_filter :authenticate_user!
 
   # GET /forums
@@ -9,37 +10,47 @@ class ForumsController < ApplicationController
   end
 
   def htmlcss
-    @forums = Forum.where(tags: "LIKE html")
+    @forums = Forum.where("tags like ?", "%html%")
   end
 
   def responsive
+    @forums = Forum.where("tags like ?", "%responsive%")
   end
 
   def vb
+    @forums = Forum.where("tags like ?", "%vb%")
   end
 
   def csharp
+    @forums = Forum.where("tags like ?", "%csharp%")
   end
 
   def asp
+    @forums = Forum.where("tags like ?", "%asp%")
   end
 
   def rb
+    @forums = Forum.where("tags like ?", "%rb%")
   end
 
   def rails
+    @forums = Forum.where("tags like ?", "%rails%")
   end
 
   def php
+    @forums = Forum.where("tags like ?", "%php%")
   end
 
   def js
+    @forums = Forum.where("tags like ?", "%js%")
   end
 
   def jq
+    @forums = Forum.where("tags like ?", "%jq%")
   end
 
   def mobile
+    @forums = Forum.where("tags like ?", "%mobile%")
   end
 
   # GET /forums/1
@@ -54,12 +65,25 @@ class ForumsController < ApplicationController
 
   # GET /forums/1/edit
   def edit
+    if @forum.tags.include?("html") then params[:html_f] = true end
+    if @forum.tags.include?("responsive") then params[:responsive_f] = true end
+    if @forum.tags.include?("vb") then params[:vb_f] = true end
+    if @forum.tags.include?("csharp") then params[:csharp_f] = true end
+    if @forum.tags.include?("asp") then params[:asp_f] = true end
+    if @forum.tags.include?("rb") then params[:rb_f] = true end
+    if @forum.tags.include?("rails") then params[:rails_f] = true end
+    if @forum.tags.include?("php") then params[:php_f] = true end
+    if @forum.tags.include?("js") then params[:js_f] = true end
+    if @forum.tags.include?("jq") then params[:jq_f] = true end
+    if @forum.tags.include?("mobile") then params[:mobile_f] = true end
   end
 
   # POST /forums
   # POST /forums.json
   def create
     @forum = Forum.new(forum_params)
+    @forum.user_id = current_user.id
+    @forum.tags = params[:selected_tags].join(",")
 
     respond_to do |format|
       if @forum.save
@@ -75,6 +99,8 @@ class ForumsController < ApplicationController
   # PATCH/PUT /forums/1
   # PATCH/PUT /forums/1.json
   def update
+
+    @forum.tags = params[:selected_tags].join(",")
     respond_to do |format|
       if @forum.update(forum_params)
         format.html { redirect_to @forum, notice: 'Forum was successfully updated.' }
@@ -97,13 +123,17 @@ class ForumsController < ApplicationController
   end
 
   private
+    def set_users
+      @users = User.all
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_forum
       @forum = Forum.find(params[:id])
+      @user = User.find(@forum.user_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_params
-      params.require(:forum).permit(:title, :question, :tags, :user_id)
+      params.require(:forum).permit(:title, :question, :selected_tags, :user_id)
     end
 end

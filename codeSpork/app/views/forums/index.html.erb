@@ -6,9 +6,8 @@
       <th>Title</th>
       <th>Question</th>
       <th>Tags</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
+      <th>Inquirer</th>
+      <% if is_admin? %><th></th><% end %>
       <th></th>
     </tr>
   </thead>
@@ -16,13 +15,17 @@
   <tbody>
     <% @forums.each do |forum| %>
       <tr>
-        <td><%= forum.title %></td>
+        <td><%= link_to forum.title, forum %></td>
         <td><%= forum.question %></td>
         <td><%= forum.tags %></td>
-        <td><%= forum.user_id %></td>
-        <td><%= link_to 'Show', forum %></td>
-        <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
-        <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Posted by <%= find_user(@users, forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
+        <% if is_admin? %>
+            <td>
+                <%= link_to 'Edit', edit_forum_path(forum) %>&nbsp;/&nbsp;
+                <%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+        <% end %>
+        <td></td>
       </tr>
     <% end %>
   </tbody>

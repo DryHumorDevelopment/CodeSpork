@@ -15,7 +15,7 @@
 
   <tbody>
     <% @tips.each do |tip| %>
-      <tr><% user = compare(@users, tip.user_id) %>
+      <tr><% user = find_user(@users, tip.user_id) %>
         <td><%= user.user_name %></td>
         <td><%= image_tag user.avatar %></td>
         <td><%= tip.title %></td>

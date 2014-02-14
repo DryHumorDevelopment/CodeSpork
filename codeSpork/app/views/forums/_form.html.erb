@@ -1,3 +1,4 @@
+<div class="innerContainer">
 <%= form_for(@forum) do |f| %>
   <% if @forum.errors.any? %>
     <div id="error_explanation">
@@ -19,15 +20,22 @@
     <%= f.label :question %><br>
     <%= f.text_area :question %>
   </div>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
+  <div class="field lang">
+    <span></span>
+    <span><%= check_box_tag 'selected_tags[]', 'html', !!params[:html_f], {} %> HTML/CSS</span>
+    <span><%= check_box_tag 'selected_tags[]', 'responsive', !!params[:responsive_f], {} %> Responsive Design</span>
+    <span><%= check_box_tag 'selected_tags[]', 'vb', !!params[:vb_f], {} %> VB.NET</span>
+    <span><%= check_box_tag 'selected_tags[]', 'csharp', !!params[:csharp_f], {} %> C#</span>
+    <span><%= check_box_tag 'selected_tags[]', 'asp', !!params[:asp_f], {} %> ASP.NET</span>
+    <span><%= check_box_tag 'selected_tags[]', 'rb', !!params[:rb_f], {} %> Ruby</span>
+    <span><%= check_box_tag 'selected_tags[]', 'rails', !!params[:rails_f], {} %> Ruby on Rails</span>
+    <span><%= check_box_tag 'selected_tags[]', 'php', !!params[:php_f], {} %> PHP</span>
+    <span><%= check_box_tag 'selected_tags[]', 'js', !!params[:js_f], {} %> JavaScript</span>
+    <span><%= check_box_tag 'selected_tags[]', 'jq', !!params[:jq_f], {} %> jQuery</span>
+    <span><%= check_box_tag 'selected_tags[]', 'mobile', !!params[:mobile_f], {} %> Mobile Development</span>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
+  <div class="actions clearfix center">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
