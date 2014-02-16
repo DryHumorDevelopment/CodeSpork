@@ -11,46 +11,57 @@ class ForumsController < ApplicationController
 
   def htmlcss
     @forums = Forum.where("tags like ?", "%html%")
+    @title = "HTML/CSS Listings"
   end
 
   def responsive
     @forums = Forum.where("tags like ?", "%responsive%")
+    @title = "Responsive Design Listings"
   end
 
   def vb
     @forums = Forum.where("tags like ?", "%vb%")
+    @title = "VB.NET Listings"
   end
 
   def csharp
     @forums = Forum.where("tags like ?", "%csharp%")
+    @title = "C# Listings"
   end
 
   def asp
     @forums = Forum.where("tags like ?", "%asp%")
+    @title = "ASP.NET Listings"
   end
 
   def rb
     @forums = Forum.where("tags like ?", "%rb%")
+    @title = "Ruby Listings"
   end
 
   def rails
     @forums = Forum.where("tags like ?", "%rails%")
+    @title = "Ruby on Rails Listings"
   end
 
   def php
     @forums = Forum.where("tags like ?", "%php%")
+    @title = "PHP Listings"
   end
 
   def js
     @forums = Forum.where("tags like ?", "%js%")
+    @title = "JavaScript Listings"
   end
 
   def jq
     @forums = Forum.where("tags like ?", "%jq%")
+    @title = "jQuery Listings"
   end
 
   def mobile
     @forums = Forum.where("tags like ?", "%mobile%")
+    @title = "Mobile Development Listings"
   end
 
   # GET /forums/1
@@ -83,7 +94,7 @@ class ForumsController < ApplicationController
   def create
     @forum = Forum.new(forum_params)
     @forum.user_id = current_user.id
-    @forum.tags = params[:selected_tags].join(",")
+    @forum.tags = if !params[:selected_tags].nil? then params[:selected_tags].join(",") end
 
     respond_to do |format|
       if @forum.save

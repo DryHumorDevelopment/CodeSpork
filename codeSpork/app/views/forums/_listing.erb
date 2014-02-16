@@ -1,19 +1,19 @@
-<h1>All Forum Listings</h1>
+<h1><%= @title %></h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Question</th>
-      <th>Tags</th>
-      <th>Inquirer</th>
-      <% if is_admin? %><th></th><% end %>
-      <th></th>
-    </tr>
+  <tr>
+    <th>Title</th>
+    <th>Question</th>
+    <th>Tags</th>
+    <th>Inquirer</th>
+    <% if is_admin? %><th></th><% end %>
+    <th></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @forums.each do |forum| %>
+  <% @forums.each do |forum| %>
       <tr>
         <td><%= link_to forum.title, forum %></td>
         <td><%= forum.question.html_safe %></td>
@@ -24,11 +24,11 @@
         <% end %>
         <td></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 <% if is_admin? %>
-<%= link_to 'New Post', new_forum_path %>
+    <%= link_to 'New Post', new_forum_path %>
 <% end %>

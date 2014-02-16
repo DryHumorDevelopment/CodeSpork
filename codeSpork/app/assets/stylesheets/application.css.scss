@@ -27,6 +27,12 @@ body
 .clearfix {
     clear: both;
 }
+.sideNav{
+  .current {
+    background-color: black;
+    color: white;
+  }
+}
 
 .breakall {
   word-break: break-all;
