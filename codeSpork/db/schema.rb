@@ -41,10 +41,11 @@ ActiveRecord::Schema.define(version: 20140216042026) do
   add_index "replies", ["forum_id"], name: "index_replies_on_forum_id"
 
   create_table "tips", force: true do |t|
+    t.string   "username"
+    t.string   "avatar"
     t.string   "title"
     t.text     "description"
     t.text     "code"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
