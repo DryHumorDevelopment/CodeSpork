@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Use carriereave for uploading avatars
+gem 'carrierwave'
+
 # Use Devise for login and account stuff
 gem 'devise'
 
