@@ -1,4 +1,5 @@
 CodeSpork::Application.routes.draw do
+
   resources :forums do
     collection do
       get :htmlcss
@@ -13,6 +14,7 @@ CodeSpork::Application.routes.draw do
       get :jq
       get :mobile
     end
+    resources :replies
   end
 
   resources :tips

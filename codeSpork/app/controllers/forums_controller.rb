@@ -6,67 +6,69 @@ class ForumsController < ApplicationController
   # GET /forums
   # GET /forums.json
   def index
-    @forums = Forum.all
+    @forums = Forum.all.order(:updated_at => :desc)
+    @title = "All Forum Listings"
   end
 
   def htmlcss
-    @forums = Forum.where("tags like ?", "%html%")
+    @forums = Forum.where("tags like ?", "%html%").order(:updated_at => :desc)
     @title = "HTML/CSS Listings"
   end
 
   def responsive
-    @forums = Forum.where("tags like ?", "%responsive%")
+    @forums = Forum.where("tags like ?", "%responsive%").order(:updated_at => :desc)
     @title = "Responsive Design Listings"
   end
 
   def vb
-    @forums = Forum.where("tags like ?", "%vb%")
+    @forums = Forum.where("tags like ?", "%vb%").order(:updated_at => :desc)
     @title = "VB.NET Listings"
   end
 
   def csharp
-    @forums = Forum.where("tags like ?", "%csharp%")
+    @forums = Forum.where("tags like ?", "%csharp%").order(:updated_at => :desc)
     @title = "C# Listings"
   end
 
   def asp
-    @forums = Forum.where("tags like ?", "%asp%")
+    @forums = Forum.where("tags like ?", "%asp%").order(:updated_at => :desc)
     @title = "ASP.NET Listings"
   end
 
   def rb
-    @forums = Forum.where("tags like ?", "%rb%")
+    @forums = Forum.where("tags like ?", "%rb%").order(:updated_at => :desc)
     @title = "Ruby Listings"
   end
 
   def rails
-    @forums = Forum.where("tags like ?", "%rails%")
+    @forums = Forum.where("tags like ?", "%rails%").order(:updated_at => :desc)
     @title = "Ruby on Rails Listings"
   end
 
   def php
-    @forums = Forum.where("tags like ?", "%php%")
+    @forums = Forum.where("tags like ?", "%php%").order(:updated_at => :desc)
     @title = "PHP Listings"
   end
 
   def js
-    @forums = Forum.where("tags like ?", "%js%")
+    @forums = Forum.where("tags like ?", "%js%").order(:updated_at => :desc)
     @title = "JavaScript Listings"
   end
 
   def jq
-    @forums = Forum.where("tags like ?", "%jq%")
+    @forums = Forum.where("tags like ?", "%jq%").order(:updated_at => :desc)
     @title = "jQuery Listings"
   end
 
   def mobile
-    @forums = Forum.where("tags like ?", "%mobile%")
+    @forums = Forum.where("tags like ?", "%mobile%").order(:updated_at => :desc)
     @title = "Mobile Development Listings"
   end
 
   # GET /forums/1
   # GET /forums/1.json
   def show
+    @reply = Reply.new
   end
 
   # GET /forums/new

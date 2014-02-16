@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214043020) do
+ActiveRecord::Schema.define(version: 20140216042026) do
 
   create_table "changelogs", force: true do |t|
     t.string   "user"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20140214043020) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "replies", force: true do |t|
+    t.text     "answer"
+    t.integer  "user_id"
+    t.integer  "forum_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "replies", ["forum_id"], name: "index_replies_on_forum_id"
 
   create_table "tips", force: true do |t|
     t.string   "title"

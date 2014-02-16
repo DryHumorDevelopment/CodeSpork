@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<% if is_admin? %><%= link_to 'Edit', edit_forum_path(@forum) %> |<%end %>
+<%= link_to 'Back', forums_path %>
 <div class="innerContainer">
 <p>
   <strong>Inquirer:</strong>
@@ -20,6 +22,35 @@
   <%= @forum.tags %>
 </p>
 
-<% if is_admin? %><%= link_to 'Edit', edit_forum_path(@forum) %> |<%end %>
-<%= link_to 'Back', forums_path %>
+<% @forum.replies.each do |reply| %>
+    <article>
+      <h5>Reply by <%= find_user(@users, reply.user_id).user_name %></h5>
+      <p><%= reply.answer %></p>
+      <p><%= time_ago_in_words(reply.created_at) %> ago</p>
+    </article>
+<% end %>
 </div>
+
+
+<%= form_for([@forum, @reply]) do |f| %>
+    <% if @reply.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+          <ul>
+            <% @reply.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :answer %><br>
+      <%= f.text_area :answer %>
+    </div>
+    <%= f.hidden_field :forum %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

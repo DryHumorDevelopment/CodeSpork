@@ -4,7 +4,7 @@
   <thead>
   <tr>
     <th>Title</th>
-    <th>Question</th>
+    <th>Replies</th>
     <th>Tags</th>
     <th>Inquirer</th>
     <% if is_admin? %><th></th><% end %>
@@ -16,9 +16,14 @@
   <% @forums.each do |forum| %>
       <tr>
         <td><%= link_to forum.title, forum %></td>
-        <td><%= forum.question.html_safe %></td>
+        <td><%= forum.replies.count %></td>
         <td><%= forum.tags %></td>
-        <td>Posted by <%= find_user(@users, forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
+        <% if forum.replies.where(:id => 1).blank? %>
+            <td>Reply by <%= find_user(@users, forum.replies.last.user_id).user_name %> <%= time_ago_in_words(forum.replies.last.created_at) %> ago</td>
+        <% else %>
+            <td>Posted by <%= find_user(@users, forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
+        <% end %>
+
         <% if is_admin? %>
             <td><%= link_to 'Edit', edit_forum_path(forum) %>&nbsp;/&nbsp;<%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -29,6 +34,4 @@
 </table>
 
 <br>
-<% if is_admin? %>
-    <%= link_to 'New Post', new_forum_path %>
-<% end %>
+<%= link_to 'New Post', new_forum_path %>
