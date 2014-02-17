@@ -86,6 +86,8 @@ body
 {
     background-color: #CCCC99;
     color:#00aeae;
+  margin-bottom: .5%;
+
 
     a {
       margin: 0;
@@ -105,6 +107,7 @@ body
     background-color: #485f93;
     height: 70%;
     padding: 0px 1%;
+    margin-right: 1%;
 
     a {
       display: block;
@@ -114,13 +117,14 @@ body
 
 .mainContent
 {
-    width: 69%;
+    width: 67%;
     background-color: #ffffff;
     height:70%;
     overflow-y: scroll;
     padding-right: 1%;
     padding-left: 1%;
     float: left;
+    margin-bottom: .5%;
 
     a {
       color: grey;
@@ -132,9 +136,10 @@ body
 {
     float: right;
     width: 10%;
-    background-color: #834C24;
+    background-color: #485f93 ;
     height: 70%;
     padding: 0px 1%;
+    border-radius: 10px;
 
 }
 
@@ -161,7 +166,8 @@ body
 /* additional tag formatting */
 h2{color: #003366;}
 h3{color: #FFF8DC;}
-h5{color: #000000;}
+h4{color: #FFF8DC;}
+h5{color: #FFF8DC;}
 
 /* basic link */
 a {
