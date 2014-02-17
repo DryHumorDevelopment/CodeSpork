@@ -21,6 +21,8 @@ class RepliesController < ApplicationController
       if @reply.save
         format.html { redirect_to forum_path(@forum), notice: 'Reply was successfully created.' }
         format.json { render action: 'show', status: :created, location: @reply }
+        original_poster = User.where(@forum.user_id == User.id)
+        Usermailer.deliver_reply_notification(original_poster, current_user.user_name, forum_reply_path)
       else
         format.html { redirect_to forum_path(@forum), notice: 'Reply was NOT created.' }
         format.json { render json: @reply.errors, status: :unprocessable_entity }

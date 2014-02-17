@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html"/>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="CONTENT-TYPE"/>
+  <style>
+      body{background-color: #000000;}
+      #content
+      {width:900px;background-color: #ffffff;}
+  </style>
+</head>
+<body>
+<div id="content">
+  <h1>Welcome to codeSpork.com, <%=	 @user.user_name %></h1>
+  <p>You have just received a reply to your question.<br/><br/>
+  To view this, please follow this link: <%= link_to @url, @url %>
+  </p>
+
+</div>
+</body>
+</html>

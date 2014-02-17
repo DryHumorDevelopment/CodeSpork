@@ -18,4 +18,10 @@ class Usermailer < ActionMailer::Base
     @url = url
     mail(to: @user.email, subject: "Thank you for posting!")
   end
+
+  def qa_notification(user, url)
+    @user = user
+    @url = url
+    mail(to: @user.email, subject: "A new question was asked in the Q&A section.")
+  end
 end
