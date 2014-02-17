@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
-#Use carriereave for uploading avatars
+#Use carrierwave for uploading avatars
 gem 'carrierwave'
+
+#Used for pagination
+gem 'kaminari'
 
 # Use Devise for login and account stuff
 gem 'devise'
