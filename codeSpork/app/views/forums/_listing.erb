@@ -19,7 +19,7 @@
         <td><%= link_to forum.title, forum %></td>
         <td><%= forum.replies.count %></td>
         <td><%= forum.tags %></td>
-        <% if forum.replies.where(:id => 1).blank? %>
+        <% if forum.replies.count != 0 %>
             <td>Reply by <%= find_user(@users, forum.replies.last.user_id).user_name %> <%= time_ago_in_words(forum.replies.last.created_at) %> ago</td>
         <% else %>
             <td>Posted by <%= find_user(@users, forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
