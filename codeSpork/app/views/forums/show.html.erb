@@ -3,7 +3,8 @@
 <%= link_to 'Back', forums_path %>
 <div class="innerContainer">
 <p>
-  <strong>Inquirer:</strong>
+  <strong>Inquirer:</strong><br>
+  <%= image_tag find_user(@users, @forum.user_id).avatar, alt: 'Avatar' %><br>
   <%= find_user(@users, @forum.user_id).user_name %>
 </p>
 
