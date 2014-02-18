@@ -35,7 +35,7 @@ class RepliesController < ApplicationController
   def destroy
     @reply.destroy
     respond_to do |format|
-      format.html { redirect_to replies_url }
+      format.html { redirect_to forum_path(@reply.forum_id) }
       format.json { head :no_content }
     end
   end

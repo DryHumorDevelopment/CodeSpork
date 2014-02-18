@@ -23,10 +23,13 @@
 </p>
 
 <% @forum.replies.each do |reply| %>
-    <article>
+    <article class="replies">
       <h5>Reply by <%= find_user(@users, reply.user_id).user_name %></h5>
       <p><%= reply.answer %></p>
       <p><%= time_ago_in_words(reply.created_at) %> ago</p>
+      <% if is_admin? %>
+          <span class="deletelink"><%= link_to 'Delete Answer', forum_reply_path(@forum, reply), :confirm => 'Are you sure?', :method => :delete %></span>
+      <% end %>
     </article>
 <% end %>
 </div>

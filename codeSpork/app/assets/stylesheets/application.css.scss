@@ -175,8 +175,20 @@ a {
   &:hover { color: #ffff00; }
 }
 
+.deletelink {
+  display: block;
+  font-size: .7em;
+  text-align: right;
+  margin-bottom: 10px;
+}
 
-
+.replies {
+  border-top: 1px dashed black;
+  margin: 0;
+}
+.replies:last-child {
+  border-bottom: 1px dashed black;
+}
 
 
 // Media Queries
