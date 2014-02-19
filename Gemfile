@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#Use redcarpet + coderay for syntax highlighting
+gem 'redcarpet'
+gem 'coderay'
+
 #Use carrierwave for uploading avatars
 gem 'carrierwave'
 
