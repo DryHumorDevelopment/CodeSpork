@@ -1,0 +1,36 @@
+<% if info.count != 0 %>
+    <table>
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Replies</th>
+        <th>Tags</th>
+        <th>Inquirer</th>
+        <% if is_admin? %><th></th><% end %>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% info.each do |forum| %>
+          <tr>
+            <td><%= link_to forum.title, forum %></td>
+            <td><%= forum.replies.count %></td>
+            <td><%= forum.tags %></td>
+            <% if forum.replies.count != 0 %>
+                <td>Reply by <%= find_user(users, forum.replies.last.user_id).user_name %> <%= time_ago_in_words(forum.replies.last.created_at) %> ago</td>
+            <% else %>
+                <td>Posted by <%= find_user(users, forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
+            <% end %>
+
+            <% if is_admin? %>
+                <td><%= link_to 'Edit', edit_forum_path(forum) %>&nbsp;/&nbsp;<%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+            <td></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <h3>No Posts have been made yet.</h3>
+<% end %>

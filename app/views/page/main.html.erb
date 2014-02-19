@@ -38,45 +38,30 @@
   <% end %>
 <% end %>
   <br>
-  <% if @info[:forums].count != 0 %>
-      <table>
-        <thead>
-        <tr>
-          <th>Title</th>
-          <th>Replies</th>
-          <th>Tags</th>
-          <th>Inquirer</th>
-          <% if is_admin? %><th></th><% end %>
-          <th></th>
-        </tr>
-        </thead>
 
-        <tbody>
-        <% @info[:forums][:html].each do |forum| %>
-            <tr>
-              <td><%= link_to forum.title, forum %></td>
-              <td><%= forum.replies.count %></td>
-              <td><%= forum.tags %></td>
-              <% if forum.replies.count != 0 %>
-                  <td>Reply by <%= find_user(@info[:users], forum.replies.last.user_id).user_name %> <%= time_ago_in_words(forum.replies.last.created_at) %> ago</td>
-              <% else %>
-                  <td>Posted by <%= find_user(@info[:users], forum.user_id).user_name %> <%= time_ago_in_words(forum.created_at) %> ago</td>
-              <% end %>
-
-              <% if is_admin? %>
-                  <td><%= link_to 'Edit', edit_forum_path(forum) %>&nbsp;/&nbsp;<%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-              <td></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-  <% else %>
-      <h3>No Posts have been made yet.</h3>
-  <% end %>
-
-  <br>
-  <%= link_to 'See Forums', forums_path %>
+  <div id="tabs">
+    <ul>
+      <li><a href="#all">ALL</a></li>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#responsive">Responsive</a></li>
+      <li><a href="#vb">VB.NET</a></li>
+      <li><a href="#csharp">C#</a></li>
+      <li><a href="#asp">ASP.NET</a></li>
+      <li><a href="#rb">RUBY</a></li>
+      <li><a href="#rails">RAILS</a></li>
+      <li><a href="#php">PHP</a></li>
+      <li><a href="#js">JS</a></li>
+      <li><a href="#jq">jQuery</a></li>
+      <li><a href="#mobile">MOBILE</a></li>
+    </ul>
+    <% users = @info[:users] %>
+    <% @info[:forums].each_pair do |name, value| %>
+        <div id="<%= name.to_s %>">
+          <%= render partial: "page/recentqa", locals: {info: value, users: users} %>
+        </div>
+    <% end %>
+  </div>
+  <div class="right"><%= link_to 'See Forums', forums_path %></div>
 </div>
 
 

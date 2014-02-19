@@ -4,6 +4,7 @@ class Page < ActiveRecord::Base
         :changelogs => Changelog.all.order(id: :desc).limit(5),
         :users => User.all,
         :forums => {
+            :all => Forum.order(updated_at: :desc).limit(5),
             :html => Forum.where("tags like ?", "%html%").order(updated_at: :desc).limit(5),
             :responsive => Forum.where("tags like ?", "%responsive%").order(updated_at: :desc).limit(5),
             :vb => Forum.where("tags like ?", "%vb%").order(updated_at: :desc).limit(5),
