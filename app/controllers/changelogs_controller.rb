@@ -26,7 +26,8 @@ class ChangelogsController < ApplicationController
   def create
     @changelog = Changelog.new(changelog_params)
     @changelog.user = current_user.user_name
-    @changelog.date = Time.now.strftime "%m-%d-%Y"
+    t = Time.now
+    @changelog.date = format(t.to_s, "%m/%d/%Y")
     respond_to do |format|
       if @changelog.save
         format.html { redirect_to @changelog, notice: 'Changelog was successfully created.' }
