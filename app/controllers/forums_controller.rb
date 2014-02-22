@@ -8,6 +8,7 @@ class ForumsController < ApplicationController
   def index
     @forums = Forum.all.order(:updated_at => :desc)
     @title = "All Forum Listings"
+    @forum = Forum.new
   end
 
   def htmlcss

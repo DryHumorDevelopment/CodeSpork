@@ -13,9 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require tinymce-jquery
-
-$(document).ready(function(){
-    $("#tabs").tabs().addClass('ui-tabs-vertical ui-helper-clearfix');;
-});
