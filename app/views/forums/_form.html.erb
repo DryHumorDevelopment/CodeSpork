@@ -19,7 +19,11 @@
   </div>
   <div class="field">
     <%= f.label :question %><br>
-    <%= f.text_area :question, :class => 'tinymce' %>
+    <%= f.text_area :question%>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>
+    <%= f.select :language, options_for_select([ ["HTML", "html"], ["CSS", "css"], ["Visual Basic", "vb"], ["C#", "csharp"], ["Rails", "erb"], ["Ruby", "ruby"], ["Javascript", "javascript"], ["PHP", "php"] ],"HTML")%>
   </div>
   <div class="field lang">
     <span></span>

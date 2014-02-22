@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216042026) do
+ActiveRecord::Schema.define(version: 20140222161448) do
 
   create_table "changelogs", force: true do |t|
     t.string   "user"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140216042026) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "language"
   end
 
   create_table "replies", force: true do |t|

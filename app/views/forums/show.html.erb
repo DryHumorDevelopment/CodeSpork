@@ -15,7 +15,7 @@
 
 <p>
   <strong>Question:</strong>
-  <%= @forum.question.html_safe %>
+  <%= markdown("``` #{@forum.language}\n" + @forum.question.html_safe + "\n```") %>
 </p>
 
 <p>
