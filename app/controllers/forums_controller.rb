@@ -8,7 +8,6 @@ class ForumsController < ApplicationController
   def index
     @forums = Forum.all.order(:updated_at => :desc)
     @title = "All Forum Listings"
-    @forum = Forum.new
   end
 
   def htmlcss
@@ -139,6 +138,7 @@ class ForumsController < ApplicationController
   private
     def set_users
       @users = User.all
+      @forum = Forum.new
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_forum
