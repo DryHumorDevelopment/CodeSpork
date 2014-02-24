@@ -10,7 +10,7 @@
 <body>
 <div id="container">
 <header class="headerBar">
-  <%=image_tag "banner1.png"%>
+  <%=image_tag("banner1.png", id: "head-banner")%>
 </header>
 <nav class="topNav">
   <%= render 'layouts/topNav' %>
@@ -27,8 +27,7 @@
 </aside>
 
 <footer class="btmFooter">
-  <h4>Footer</h4>
-  <h5>Insert Company Logo Here:</h5>
+  <%=image_tag("dry-humor-logo.jpg", class: "dry_logo", height: "75", width: "112")%>
 </footer>
 
 <%= javascript_include_tag "jquery-ui-1.10.4.custom.min" %>

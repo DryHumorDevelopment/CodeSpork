@@ -83,7 +83,12 @@ body
     img {
       opacity: .7;
       max-width: 100%;
+      align: center;
     }
+}
+#head-banner
+{
+
 }
 
 .topNav
@@ -107,11 +112,12 @@ body
 {
     font-size: .8em;
     float: left;
-    width: 15%;
+    width: 14%;
     background-color: #485f93;
     height: 70%;
     padding: 0px 1%;
-    margin-right: 1%;
+
+
 
     a {
       display: block;
@@ -121,7 +127,7 @@ body
 
 .mainContent
 {
-    width: 67%;
+    width: 66%;
     background-color: #ffffff;
     height:70%;
     overflow-y: scroll;
@@ -129,6 +135,7 @@ body
     padding-left: 1%;
     float: left;
     margin-bottom: .5%;
+
 
     a {
       color: grey;
@@ -196,7 +203,7 @@ a {
 
 #tabs {
   li {
-    font-size: .35em;
+    font-size: .5em;
   }
 }
 .ui-tabs.ui-tabs-vertical {
@@ -229,6 +236,7 @@ a {
   display: block;
   width: 100%;
   padding: 0.6em 1em;
+  text-align: left;
 }
 .ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
   cursor: pointer;
@@ -291,4 +299,15 @@ a {
   #container {
     width: 100%;
   }
+}
+
+.home-list
+{
+  width:80%;
+  font-size: 1.1em;
+
+}
+.dry_logo
+{
+  padding-top: 1%;
 }

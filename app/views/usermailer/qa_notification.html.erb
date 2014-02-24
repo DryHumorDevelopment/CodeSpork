@@ -7,11 +7,13 @@
   <style>
       body{background-color: #000000;}
       #content
-      {width:900px;background-color: #ffffff;}
+      {width:900px;background-color: #ffffff;border-radius:15px;box-shadow:10px 10px 5px #808080;}
   </style>
 </head>
 <body>
 <div id="content">
+  <%=image_tag("dry-humor-logo.jpg", class: "dry_logo", height: "75", width: "112")%>
+  <br><br>
   <h1>Welcome to codeSpork.com, <%=	 @user.user_name %></h1>
   <p>
     This message is to notify you that a new question was asked on codeSpork.com's Q&A forum.<br/><br/>
