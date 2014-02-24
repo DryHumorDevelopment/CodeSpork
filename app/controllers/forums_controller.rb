@@ -1,6 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
   before_action :set_users
+  before_action :set_new_forum, except: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
   # GET /forums
@@ -138,6 +139,8 @@ class ForumsController < ApplicationController
   private
     def set_users
       @users = User.all
+    end
+    def set_new_forum
       @forum = Forum.new
     end
     # Use callbacks to share common setup or constraints between actions.
