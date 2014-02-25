@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>CodeSpork</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href="http://code.jquery.com/ui/1.9.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <script language="JavaScript1.2">
@@ -66,11 +67,15 @@
 
 <footer class="btmFooter">
   <%=image_tag("dry-humor-logo.jpg", class: "dry_logo", height: "75", width: "112")%>
-
 </footer>
-
-<%= javascript_include_tag "jquery-ui-1.10.4.custom.min" %>
-<%= javascript_include_tag "main" %>
 </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        jQuery(function($){
+            $("#tabs").tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
+            $(".accordion").accordion({collapsible: true, active: false});
+        });
+    </script>
 </body>
 </html>
