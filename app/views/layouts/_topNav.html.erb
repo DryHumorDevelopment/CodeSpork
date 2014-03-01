@@ -4,7 +4,7 @@
 <%=link_to("Q & A", forums_path)%>
 <%=link_to("FAQ", page_faq_path)%>
 <%=link_to("Resources", page_resources_path)%>
-<%=link_to("Coding Horror Stories", page_horror_path)%>
+<%=link_to("Coding Horror Stories", stories_path)%>
 <% if !user_signed_in? %>
     <%=link_to("Log In", new_user_session_path)%>
     <%= link_to('Register', new_user_registration_path)  %>

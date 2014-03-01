@@ -1,0 +1,38 @@
+<% if @stories.count != 0 %>
+    <h1>Listing Stories</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Username</th>
+        <th>Avatar</th>
+        <th>Title</th>
+        <th>Description</th>
+        <% if is_admin? %>
+            <th></th>
+        <% end %>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @stories.each do |story| %>
+          <tr><% user = find_user(@users, story.user_id) %>
+            <td><%= user.user_name %></td>
+            <td><%= image_tag user.avatar %></td>
+            <td><%= story.title %></td>
+            <td><%= truncate(story.description, :length => 15) %><br/><%= link_to 'Read More', story %></td>
+            <% if is_admin? %>
+                <td><%= link_to 'Edit', edit_story_path(story) %>&nbsp;/&nbsp;<%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <h3>No Stories have been posted yet.</h3>
+<% end %>
+
+<br>
+<% if is_admin? %>
+    <%= link_to 'New Story', new_story_path %>
+<% end %>

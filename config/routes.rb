@@ -1,5 +1,7 @@
 CodeSpork::Application.routes.draw do
 
+  resources :stories
+
   resources :forums do
     collection do
       get :htmlcss
