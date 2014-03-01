@@ -1,11 +1,14 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
-    @users = User.all
+    #@stories = Story.all
+    #@users = User.all
+    @stories = Story.all.order(:updated_at => :desc)
+    @title = "All Story Listings"
   end
 
   # GET /stories/1
