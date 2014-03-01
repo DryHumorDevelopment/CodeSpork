@@ -316,3 +316,28 @@ a {
 {
   color:#cecb9c;
 }
+
+div.rotator {
+  position:relative;
+  height:345px;
+  display:none;
+}
+
+div.rotator ul {
+  margin:0;
+  padding:0;
+}
+div.rotator ul li {
+  float:left;
+  position:absolute;
+  list-style: none;
+}
+
+div.rotator ul li img {
+  border:1px solid #ccc;
+  padding: 4px;
+  background: #FFF;
+}
+div.rotator ul li.show {
+  z-index:500;
+}

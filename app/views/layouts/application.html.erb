@@ -7,42 +7,7 @@
   <link href="http://code.jquery.com/ui/1.9.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <script language="JavaScript1.2">
 
-      var howOften = 5;
-      var current = 0;
-      var ns6 = document.getElementById&&!document.all;
-
-      var items = new Array();
-      items[0]="<a href='http://us.acer.com/ac/en/US/content/home'>Acer</a>";
-      items[1]="<a href='http://www.hp.com/country/us/en/uc/welcome.html'>HP</a>";
-      items[2]="<a href='https://www.apple.com/mac/'>Mac</a>";
-      items[3]="<a href='http://msdn.microsoft.com/en-us/library/ms123401.aspx'>MSDN</a>";
-      items[4]="<a href='http://www.apache.com/' >Apache</a>";
-      items[5]="<a href='https://www.codeschool.com/'>CodeSchool</a>";
-
-
-      function rotater() {
-          document.getElementById("placeholder").innerHTML = items[current];
-          current = (current==items.length-1) ? 0 : current + 1;
-          setTimeout("rotater()",howOften*1000);
-      }
-
-      function rotater() {
-          if(document.layers) {
-              document.placeholderlayer.document.write(items[current]);
-              document.placeholderlayer.document.close();
-          }
-          if(ns6)document.getElementById("placeholderdiv").innerHTML=items[current]
-          if(document.all)
-              placeholderdiv.innerHTML=items[current];
-
-          current = (current==items.length-1) ? 0 : current + 1; //increment or reset
-          setTimeout("rotater()",howOften*1000);
-      }
-      window.onload=rotater;
-      //-->
-  </script>
 </head>
 <body>
 <div id="container">
@@ -62,7 +27,45 @@
 
 <aside class="rightAside">
   <h4 class="ads">Connect to Our Sponsors:</h4>
-  <layer id="placeholderlayer"></layer> <div id="placeholderdiv"></div>
+  <div class="rotator">
+    <ul>
+      <li class="show">
+        <a href="http://us.acer.com/ac/en/US/content/home">Acer</a>
+        <%=image_tag("ads/acer.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.apache.com/">Apache</a>
+          <%=image_tag("ads/apache.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.codeschool.com/">Codeschool</a>
+        <%=image_tag("ads/codeschool.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.hp.com/country/us/en/hho/welcome.html">HP</a>
+        <%=image_tag("ads/hp.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.apple.com/mac/">Mac</a>
+        <%=image_tag("ads/mac.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN</a>
+        <%=image_tag("ads/microsoft.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.codecademy.com/">CodeAcademy</a>
+        <%=image_tag("ads/codeacademy.jpg", width: "100", height: "100")%>
+        </a>
+      </li>
+    </ul>
+  </div>
 </aside>
 
 <footer class="btmFooter">
