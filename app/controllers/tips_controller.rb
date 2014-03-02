@@ -5,7 +5,8 @@ class TipsController < ApplicationController
   # GET /tips
   # GET /tips.json
   def index
-    @tips = Tip.all
+    #@tips = Tip.all
+    @users = User.all
     @tips = Tip.all.order(:updated_at => :desc)
     @title = "All Tips Listings"
   end
@@ -80,6 +81,6 @@ class TipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :code, :user_id)
+      params.require(:tip).permit(:title, :description, :code, :user_id)
     end
 end
