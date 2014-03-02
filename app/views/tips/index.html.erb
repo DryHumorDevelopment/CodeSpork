@@ -5,9 +5,8 @@
       <thead>
         <tr>
           <th>Username</th>
-          <th>Avatar</th>
           <th>Title</th>
-          <th>Description</th>
+          <th>Tip</th>
           <% if is_admin? %>
               <th></th>
           <% end %>
@@ -18,7 +17,7 @@
         <% @tips.each do |tip| %>
           <tr><% user = find_user(@users, tip.user_id) %>
             <td><%= user.user_name %></td>
-            <td><%= image_tag user.avatar %></td>
+            <%#= image_tag user.avatar %>
             <td><%= tip.title %></td>
             <td><%= truncate(tip.description, :length => 15) %><br/><%= link_to 'Read More', tip %></td>
             <% if is_admin? %>

@@ -1,12 +1,13 @@
 class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
-  before_filter :auth, except: [:index, :show]
+  #before_filter :auth, except: [:index, :show]
 
   # GET /tips
   # GET /tips.json
   def index
     @tips = Tip.all
-    @users = User.all
+    @tips = Tip.all.order(:updated_at => :desc)
+    @title = "All Tips Listings"
   end
 
   # GET /tips/1
@@ -65,12 +66,12 @@ class TipsController < ApplicationController
   end
 
   private
-    def auth
-      authenticate_user! && current_user.admin?
-      if !current_user.admin?
-        redirect_to tips_path
-      end
-    end
+    #def auth
+    #  authenticate_user! && current_user.admin?
+    #  if !current_user.admin?
+    #    redirect_to tips_path
+    #  end
+    #end
     # Use callbacks to share common setup or constraints between actions.
     def set_tip
       @tip = Tip.find(params[:id])
@@ -79,6 +80,6 @@ class TipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:title, :description, :code, :user_id)
+      params.require(:tip).permit(:title, :code, :user_id)
     end
 end
