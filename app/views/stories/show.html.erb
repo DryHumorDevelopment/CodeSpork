@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="innerContainer">
   <figure>
-    <%= image_tag @user.avatar %>
+    <%#= image_tag @user.avatar %>
     <figcaption><%= @user.user_name %></figcaption>
   </figure>
 
@@ -19,7 +19,7 @@
   <div class="clearfix"></div>
 
   <div class="tipsCode">
-    <strong>Code:</strong>
+    <strong>Story:</strong>
     <%= @story.code.html_safe %>
   </div>
 

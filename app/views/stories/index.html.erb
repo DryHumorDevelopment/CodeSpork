@@ -5,7 +5,6 @@
       <thead>
       <tr>
         <th>Username</th>
-        <th>Avatar</th>
         <th>Title</th>
         <th>Description</th>
         <% if is_admin? %>
@@ -18,7 +17,7 @@
       <% @stories.each do |story| %>
           <tr><% user = find_user(@users, story.user_id) %>
             <td><%= user.user_name %></td>
-            <td><%= image_tag user.avatar %></td>
+            <%#= image_tag user.avatar %>
             <td><%= story.title %></td>
             <td><%= truncate(story.description, :length => 15) %><br/><%= link_to 'Read More', story %></td>
             <% if is_admin? %>
@@ -33,6 +32,5 @@
 <% end %>
 
 <br>
-<% if is_admin? %>
+
     <%= link_to 'New Story', new_story_path %>
-<% end %>

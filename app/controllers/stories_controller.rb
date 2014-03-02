@@ -1,12 +1,12 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   # GET /stories
   # GET /stories.json
   def index
     #@stories = Story.all
-    #@users = User.all
+    @users = User.all
     @stories = Story.all.order(:updated_at => :desc)
     @title = "All Story Listings"
   end
@@ -67,12 +67,12 @@ class StoriesController < ApplicationController
   end
 
   private
-  def auth
-    authenticate_user! && current_user.admin?
-    if !current_user.admin?
-      redirect_to stories_path
-    end
-  end
+  #def auth
+  #  authenticate_user! && current_user.admin?
+  #  if !current_user.admin?
+  #    redirect_to stories_path
+  #  end
+  #end
     # Use callbacks to share common setup or constraints between actions.
     def set_story
       @story = Story.find(params[:id])
