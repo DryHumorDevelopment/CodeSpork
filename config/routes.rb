@@ -29,6 +29,7 @@ CodeSpork::Application.routes.draw do
   get "page/resources"
   get "page/horror"
   get "page/main"
+  get "page/contact"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
