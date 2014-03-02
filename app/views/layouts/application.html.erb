@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>CodeSpork</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <link href="http://code.jquery.com/ui/1.9.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -11,74 +11,83 @@
 </head>
 <body>
 <div id="container">
-<header class="headerBar">
+  <header class="headerBar">
 
- <%=image_tag("banner1.png", id: "head-banner")%>
-</header>
-<nav class="topNav">
-  <%= render 'layouts/topNav' %>
-</nav>
-<nav class="sideNav">
-  <%= render 'layouts/sideNav' %>
-</nav>
-<section class="mainContent">
-  <%= yield %>
-</section>
+    <%= image_tag("banner1.png", id: "head-banner") %>
+  </header>
+  <nav class="topNav">
+    <%= render 'layouts/topNav' %>
+  </nav>
+  <nav class="sideNav">
+    <%= render 'layouts/sideNav' %>
+  </nav>
+  <section class="mainContent">
+    <%= yield %>
+  </section>
 
-<aside class="rightAside">
-  <h4 class="ads">Connect to Our Sponsors:</h4>
-  <div class="rotator">
-    <ul>
-      <li class="show">
-        <a href="http://us.acer.com/ac/en/US/content/home">Acer</a>
-        <%=image_tag("ads/acer.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.apache.com/">Apache</a>
-          <%=image_tag("ads/apache.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.codeschool.com/">Codeschool</a>
-        <%=image_tag("ads/codeschool.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.hp.com/country/us/en/hho/welcome.html">HP</a>
-        <%=image_tag("ads/hp.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.apple.com/mac/">Mac</a>
-        <%=image_tag("ads/mac.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN</a>
-        <%=image_tag("ads/microsoft.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-      <li>
-        <a href="http://www.codecademy.com/">Academy</a>
-        <%=image_tag("ads/codeacademy.jpg", width: "90%", height: "90%")%>
-        </a>
-      </li>
-    </ul>
-  </div>
-</aside>
+  <aside class="rightAside">
+    <h4 class="ads">Connect to Our Sponsors:</h4>
 
-<footer class="btmFooter">
-  <%=image_tag("dry-humor-logo.jpg", class: "dry_logo", height: "75", width: "112")%>
-</footer>
+    <div class="rotator">
+      <ul>
+        <li class="show">
+          <a href="http://us.acer.com/ac/en/US/content/home">
+            <%= image_tag("ads/acer.jpg", size: "90x90", alt: "Acer") %>
+          </a>
+
+
+        </li>
+        <li>
+          <a href="http://www.apache.com/">
+            <%= image_tag("ads/apache.jpg", size: "90x90", alt: "Apache") %>
+          </a>
+
+
+        </li>
+        <li>
+          <a href="https://www.codeschool.com/">
+            <%= image_tag("ads/codeschool.jpg", size: "90x90", alt: "CodeSchool") %>
+          </a>
+
+        </li>
+        <li>
+          <a href="http://www.hp.com/country/us/en/hho/welcome.html">
+            <%= image_tag("ads/hp.jpg", size:"90x90", alt: "HP") %>
+          </a>
+
+        </li>
+        <li>
+          <a href="https://www.apple.com/mac/">
+            <%= image_tag("ads/mac.jpg", size: "90x90", alt: "Apple/Mac") %>
+          </a>
+
+        </li>
+        <li>
+          <a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">
+            <%= image_tag("ads/microsoft.jpg", size: "90x90", alt: "MSDN") %>
+          </a>
+
+        </li>
+        <li>
+          <a href="http://www.codecademy.com/">
+            <%= image_tag("ads/codeacademy.jpg", size: "90x90", alt: "Codecademy") %>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <footer class="btmFooter">
+    <%= image_tag("dry-humor-logo.jpg", class: "dry_logo", height: "75", width: "112") %>
+  </footer>
 </div>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script>
-        jQuery(function($){
-            $("#tabs").tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
-            $(".accordion").accordion({collapsible: true, active: false});
-        });
-    </script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+    jQuery(function ($) {
+        $("#tabs").tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
+        $(".accordion").accordion({collapsible: true, active: false});
+    });
+</script>
 </body>
 </html>
