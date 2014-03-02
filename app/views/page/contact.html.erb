@@ -1,2 +1,19 @@
-<h1>Page#contact</h1>
-<p>Find me in app/views/page/contact.html.erb</p>
+<h1>Contact US</h1>
+<h6>Complaints, Ideas, Suggestions, Comments:</h6>
+<%= form_tag do %>
+    <div class="field">
+      <h3>Topic:</h3>
+      <%= text_field_tag 'Subject: ' %>
+    </div>
+    <div class="field">
+      <h3>Content:</h3>
+    <%= text_area_tag 'Content: ' %>
+    </div>
+    <h3>Would you like to be contacted?</h3>
+
+    <h6><%= radio_button_tag 'Contact', 'Yes', checked='checked' %>Yes</h6>
+    <h6><%= radio_button_tag 'Contact', 'No' %> No</h6>
+    <div class="actions">
+    <%= submit_tag 'Submit' %>
+    </div>
+<% end %>

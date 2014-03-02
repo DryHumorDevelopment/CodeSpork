@@ -24,4 +24,10 @@ class Usermailer < ActionMailer::Base
     @url = url
     mail(to: @user.email, subject: "A new question was asked in the Q&A section.")
   end
+
+  def contact_notification(user)
+    @user = user
+    @url = @user.email
+    mail(to: 'http://codespork.com', subject: 'New Contact Form Post')
+  end
 end
