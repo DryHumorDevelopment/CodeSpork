@@ -5,7 +5,6 @@ class TipsController < ApplicationController
   # GET /tips
   # GET /tips.json
   def index
-    #@tips = Tip.all
     @users = User.all
     @tips = Tip.all.order(:updated_at => :desc)
     @title = "All Tips Listings"
