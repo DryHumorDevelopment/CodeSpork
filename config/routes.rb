@@ -1,5 +1,7 @@
 CodeSpork::Application.routes.draw do
 
+  resources :flags
+
   resources :stories
 
   resources :forums do

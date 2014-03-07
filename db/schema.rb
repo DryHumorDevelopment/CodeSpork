@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301154614) do
+ActiveRecord::Schema.define(version: 20140307003359) do
 
   create_table "changelogs", force: true do |t|
     t.string   "user"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20140301154614) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "flags", force: true do |t|
+    t.string   "reason"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flags", ["post_id"], name: "index_flags_on_post_id"
+  add_index "flags", ["user_id"], name: "index_flags_on_user_id"
 
   create_table "forums", force: true do |t|
     t.string   "title"
