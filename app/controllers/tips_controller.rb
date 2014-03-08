@@ -1,7 +1,8 @@
 class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   #before_filter :auth, except: [:index, :show]
-  before_filter :authenticate_user!
+  #before_action :set_users
+  #before_filter :authenticate_user!
 
   # GET /tips
   # GET /tips.json
