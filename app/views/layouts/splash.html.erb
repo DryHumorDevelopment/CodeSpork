@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>CodeSpork</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <link href="http://code.jquery.com/ui/1.9.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css">
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+    <div class="splash_main">
+       <div class="splash_logo">
+         <%= image_tag 'splash_bg.png', alt: 'Splash Logo Image' %>
+       </div>
+        <%= yield %>
+    </div>
+</body>
+</html>

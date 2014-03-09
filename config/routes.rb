@@ -1,5 +1,7 @@
 CodeSpork::Application.routes.draw do
-
+  get "splash/index"
+  get "splash/tour"
+  get "splash/login"
   resources :flags
 
   resources :stories
