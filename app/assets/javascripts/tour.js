@@ -1,6 +1,4 @@
-/**
- * Created by Deserai Adelman on 3/9/14.
- */
+
 var imgIndex = 0;
 var imgArray= [];
 for(var i=0; i<7; i++){
