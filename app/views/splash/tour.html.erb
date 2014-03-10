@@ -1,19 +1,21 @@
-
-<h1>Splash#tour</h1>
-<p>Find me in app/views/splash/tour.html.erb</p>
+<br>
 
 <h1> Enjoy the tour!</h1>
 
-<div id="image_show">
+<div class="rotator">
 
   <!--image for slideshow is displayed here -->
-  <%= image_tag("tour/tour1.jpg", id:"original") %>
+  <ul>
+    <li><%= image_tag("tour/tour1.jpg") %></li>
+    <li><%= image_tag("tour/tour2.jpg") %></li>
+    <li><%= image_tag("tour/tour3.jpg") %></li>
+    <li><%= image_tag("tour/tour4.jpg") %></li>
+    <li><%= image_tag("tour/tour5.jpg") %></li>
+    <li><%= image_tag("tour/tour6.jpg") %></li>
+    <li><%= image_tag("tour/tour7.jpg") %></li>
+  </ul>
+  <!--<a href="#" onclick="prev_slide(); return false;">Previous Slide</a>&nbsp;-->
 
-  <p></p>
-  <!-- caption goes here -->
-
-  <a href="#" onclick="prev_slide(); return false;">Previous Slide</a>&nbsp;
-
-  <a href="#" onclick="next_slide(); return false;">Next Slide</a>&nbsp;
+  <!--<a href="#" onclick="next_slide(); return false;">Next Slide</a>&nbsp;-->
 
 </div>
