@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:user_name, :email, :password, :password_confirmation, :avatar, :signature) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:user_name, :email, :password, :password_confirmation, :current_password, :avatar, :signature) }
   end
+  def after_sign_in_path_for(resource)
+    page_main_path
+  end
+  def after_sign_out_path_for(resource_or_scope)
+    splash_index_path
+  end
 end
